@@ -1,0 +1,156 @@
+{
+    "Coding": [
+        {
+            "name": "Python Docs",
+            "description": "Official Python docs",
+            "url": "https://docs.python.org/3/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAkFBMVEX/////6HP/3VRBf7E/fa46dqY9eao4c6NGhrj/76D/7ZRDgrQxapn/5Gf/4F7/4mL/3FH/6Zrr8viQuNddlcFckLqbutN3p86mxd1xoceJq8hqm8JWh6+uyuDy9/tQgKj//fOZvtv/8LD/6YBolLmVscmyx81pl7z/2Eb/3mR+pcT/64b/1D3/43n/4HD/5YXqXVBAAAAAqUlEQVQYlUWO2xqCIBCEFzwfQFFDzUqTSjOh93+7Vi5orvaf2d1vAFBV3WTeSYJT2/WeHwZnZzT1gBxdnHHtpAyiaLRwa+M48zCP8jEh6QT3g/0QGQ3GZhgc55tiXIPl8YF6zgWnFGLk15yiSEFpWULjh0tCCGEYl+v6BhkG24cwxi3vAqp+kQpjpbUxRk+2i8J15K9rqvHbagR3RnpcG/HfAMH3nQo7/gCZEQ4WPNSeSwAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "C++ Docs",
+            "description": "Official C++ docs",
+            "url": "http://www.cplusplus.com/doc/tutorial/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACRklEQVQ4jc2Ty2sTcRDHP79fNkk3bdIHbZrEooUKKVQ8VUGhRTx4F0+CB/0PvAmeFPF5sd6rHtSDjQ9arFCwpeKjpbTYR9ZGo5tgEVRi025sNo/drIeQFLFXwe9lYL4z850ZZuC/wtc129nJrydtZ2K85Gjxv3lRS0ynKhQKLgBCEYe+fS4BMD9XcTY3thM8bkFm/QPHT/QKAGV+ruIkViEUkUBVYP1nnumprNMRDAAOqg8UaWHkLEZHH/ExOV8vqGxugBa3+P5NsKcbPN4SuyI+Ghslll2pBrkkmYyB/jnB0vJbQuHg9gha3HaejxVpbYX+A24CzRIpJKoP/C02APElHYDe3r0YuQK6nmLwSJ8AEF/XbCe+bHPosILaJKiUwcbGzEsKpkMioRGNdtAZDlEpV1Wlu2q1lU8oAEePVT21ALfbRbbwg8tX7tPeNohHCSFEhWBI1lt/cO8pqfQX5LsFyZPYFnqyhE215enJRc6cvsjs7AK2ZTE7YxJ7WGRiHNbSFe4MjzB06y7hcCdKa5vFykqZdMqgu9tLJjtHLPYYw8gTCPgoFLdAmAgBuq6gaRlez0whpSDY2YbS0iZRVS8Im3S6SCKZIBhqoing4ZdRwu/3UrZM3J4GcHJYdhZV9dDe0c7B/v3I2sGUS4KGBi+qz0+5bAFw/cZZLlwaEAODzdi2xVbexDDWMc0SN4fO07U7LERtKc/Gcs6qVmJZG6FYfM/Va+fo6emq8wCvXuacyReLnDwVIRrt+YOr4/bwmx3/4Z/hN/xg+F7M9GazAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "Java Docs",
+            "description": "Official Java docs",
+            "url": "https://docs.oracle.com/en/java/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAJ1BMVEXJZ2NHcEzoVkTjWkPkW0XmWELpVkPnWEPoVjzqV0LoVkDqVkLoWETFh4m5AAAADHRSTlNBAMP8P7vh2CSWS1gN7HMCAAAAWUlEQVQYlYWP2w6AIAxDyzYZl/7/9yoEoiiJ5/EkazuEF9gKDIaokYNYm8ikHx2n5oCimuZ9ohqEdicaBcpnB/Ur1hMV2BJK67VROtee3IYVn8O87Kf/fHsCvYcDQL8IGgYAAAAASUVORK5CYII="
+        },
+        {
+            "name": "JavaScript Docs",
+            "description": "JavaScript docs",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAaVBMVEUVFBoAAAAEAA3///9mZmgQDxYAAAvc3N0MCxNpaWuysrOPjpC/vsCAgIIHBQ8AAAN1dXiJiYtNTE85OTzKyssrKi/l5eaamZvU1NS4uLkzMzdZWVze3t/Ozc6VlZb49/ghICZDQkbs7OxZGG2oAAAAfklEQVQYlY3O2xLCIAwEUNYgxXIJ1Eqttd7+/yPLTAHfHPctZybJCvFfFGshmI915hAHjRjPVUCjwYW606EshNQbTONVFoCdZoMUugZ0swaECn4h2OjuDdDPsG59fOEpM9Crgn4TYNcPkPa3egjKS7d4FUoxrfJh9rlPq/4zG8CCBV/mAogvAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "Flutter Docs",
+            "description": "Official Flutter docs",
+            "url": "https://flutter.dev/docs",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAP1BMVEVHcEw+0P0GWJ1F0f1B0f1C0f0GWJxD0f0HWJxH0v0xxfwduvwivf0FWJxC0P0gvP0zpdRF0f1B0P4evP4PZKkq6HKEAAAAEXRSTlMAIxHGnay0EP7C/sGnoIN6PMLYRdYAAABTSURBVBiVrY5BDoAgDARXhbZGUUr5/1ttYlDw7Nxmkk0WaITo4GVV1cKj64++3H4E5wmMWJypTRh754C7WefAaU7ufmMzqzIPpYqMheRbEhEl4ALCtQUkl1b5vQAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "StackOverflow",
+            "description": "Coding Q&A",
+            "url": "https://stackoverflow.com/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABXklEQVQ4jbWQv0sCYRjHv8/d1XmmJ+EWNLmabQ1BUzQk0eYUNIRCIcrpUtBYS0ueg1BLBObQ2NA/0FgQ5RA4Nyd6mT9f36dV8DyOoGd83+/zeT/fF/Ax3aKxPOtO8QMQEjXHCqb/DADLDMDnrZwe8w1wrGC6bQW3AcAsDxoEOlNUpcYpqP4MJH8AfO1YxgWnoIbtbgXgZmcpcDoZIy9zJxuOYm5UBSikKdiTqjKSI/nGhN1IqffsatDK6THHCt46eWPdrHx/mXY/CcajkHgRQiRAOALTzkyD5vFiRB32D4gpA8gxQbka6fqdNuwlmKlGLLfM8qDhr0IhsEGSDpmQBOhBUagUuvx5n8xoU0uW8USMTwbqzFTXVD4RAy3P82Lf7b2pk05xYXUsxwkCxQFeYVCcgDADrxG7tzlT96Z6zzOrZMPRdsFYc8u5VXABCRC7G08BTLvn+bGeAK8a/za/HFKIGF9CPeEAAAAASUVORK5CYII="
+        }
+    ],
+    "Data": [
+        {
+            "name": "Data.gov",
+            "description": "U.S. Government's open data",
+            "url": "https://www.data.gov/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAY0lEQVQ4jWNgoBAwogsoJc36j03hvXlpGGoZGBgYmIi1CZfBWBViU4xLnGgXwLyAbgjRBuACLLhsIssAdOcRYxh1vUCq87G6AFd0EW0AxS7ABWCuQvcm0XkBm2aSXEBOABMFAM6gKJNhakE5AAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "Census Bureau",
+            "description": "U.S. Census data",
+            "url": "https://www.census.gov/data.html",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAY1BMVEURLlL///8PLFAOK1ANK08NKk9wgZc2T23f4+hAV3RTaII7U3Dr7fBfc4utt8RmeZDM0try8/UfOlxFXHgYNFcxSmnEy9S1vsnZ3uR1hpqOm62Aj6PV2uGlsL2GlacHJUonQWI+sFotAAAAjUlEQVQYlY2PwRKDIAxEkyAEMKgotYq28v9fWbQXj75b3szObgAeoRoCICJF10nj5Ns0MvMrXWKaRezUS+XNCogXG1qfDHZrh5lAbZgbUtqg0f4U0GGvAapYZrvzXQyfIa61I+NX/yOHi3sB5cQGDsVgdhsOY60Nu1gbDEaJ0l9Dyjms+ArfpzcVevLoD4r2BsZxhUVzAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "Google Dataset Search",
+            "description": "Search engine for datasets",
+            "url": "https://datasetsearch.research.google.com/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACLUlEQVQ4jYVSS2hTURA9d1760lfFgJuqqPEbcKO1YqupiFKR+lmIIsVKBV2I0oXdia6t6ErxU82iO5eiUEHqp6JBF1mUuCg1saltKiimaonQT146My5MYppGc2C4F+7MmXvmDFACEaln5hAzDzOzm4uPzHxfVetK8wtQ1Rpm7tEKYOaQiDj5OpMvFpFnRLRLXRezTx5itr8PnByFssDjXwNvcwucI60wtg0RCRtjWohoxgAAM/cQ0RmZ+Ib0pU7MjY2U/aW9rRG+67fzUkOWZZ0zIlJvjBlQ18Xk+XZwchTGtuEca4PdEASI4EbeIfPmJXxdN2CtXF3MuRXMHFJVzUZv6fejjZrav0PdwfflxJebRzeYeVhVdS6yXTO9NTr9oKPSHIsJYh4AfgDQqSFQTRZVwUPzdDdfnVowi50bLVw5Xg0Aa6nIx/nnf+DO/b0TgDEAmPauwy8sRu+X2Lzk/suLCrFnkwcAsMxn8s+fCMArAEgsbcfJn0Fci0cQnRha0DX+VfA2/qd1w3pPgd/k1jPqchanXlzESHocNlWhNXAQTcvrQYYwkBrE4+gkZj63IlBr495pB8YAqrolv0ghIjqbmv6BC+EuJNLjZbVv8Dbh5t5O1PoMRKTbsqwOAwAi4qhqHxHtdiWLR4nneJoMYyQ9DijgX7IC+1YFcSJwGI7HCxF5TUQHjDGzBXYRcfJLVcH7u6pa/U+LVLWOmbuZOcbMmVx8YOY7IrK5NP83npmzQvMZEV8AAAAASUVORK5CYII="
+        },
+        {
+            "name": "EU Open Data Portal",
+            "description": "European Union's open data",
+            "url": "https://data.europa.eu/euodp/en/home",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAKlBMVEVHcEwDTqEATKMATKIDTqEARKYAS6ODm2RhhHhIdIKer1CQpVszZo2rtkwt5eu8AAAABHRSTlMAW1tbdoyrKAAAAF1JREFUGJWFjkkOwCAMA6HF2YD/f7cFAqi94EMUWRrbIRwVh+7Ln5CaCCmB+tsNKparKaZBqkKQ97gB5oaIYSI2gmohR3KnwSvjj5AKAyxKuzZz5V37HeaL45p+1APqvQOV/Vi/yQAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "NASA's Data Portal",
+            "description": "NASA's open data",
+            "url": "https://data.nasa.gov/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADR0lEQVQ4jW2TS2xUZRTH/+e7j07nzkzfTAudMS3oyqRJcTryuEMxLYmVoCs0unAjEGwoGGJMNJoQDBghJlM0BBPZaHywwcToQgN93FqsQCLIwgcFgy2PaUkfM/f2du79zufCTNMYf8uTc/LPOTk/YBWWndcsO0/4Hyw7Lyw7r62uhXabWGmO5wa14uiATO08E10slXtDyVki1DCrAkDDpiHG5ocOSNinBZz97NvrhQ5WVEl2nYMylht8rhzIUwBaDV0oUxcEIhVKJsnqCkB7PGfgl7ftl7R3cEkRVIZWDb8qJX/U0mipaMTgoldWM3NLMHQByUyklEbAUglWHzt7hn17/REdfJUAIL5tMMOsfopGdKSbE6ow52k1VhXCUOJuoQgWAh4bIZOmb8VfNx11djqAdcF0Jo8KAJCsXnfdspBSseuWtXv3F3Hj9wdYkBoSTfVYcpfRQ7f1T5fPBZ+H5zd8QZ0F05k8OmFv0XV0nmgydZHbnE3j1tSCVp+sQwtMtCcjuDtxFS9srMdTrTMQlx3E2tJaf6kb3zxc0wZ8h6zzYyhiVZT2QzSdPNyDY4e202P+NI5lJIaPd+Pd5C3s29sLP9uD96u2gd54j7pf3gUszm7o7T9XDwCi5LFqsYCfv76AZzoasSlegmZquOkamNixHx+fHUJXexxdLz6Li78t4OmNa9GSqlM/nP8VAECfdW3v/CSe+75g1DaYiYSa4Qj50LC33YcxPYnxMInZWBLVKsDsnMetzQnx5525639/u68DAAgAaMuHX5rEz0uJMEaB/mR4GzXJBtxb9zhGr0wBsozU2loIQUHhoWso4Lg//tqbRvYDXQBAo/BPkKbJR6xQ6zPuyClrHb6ab8aNPx6gLq4juSaBhGWGQchGJGLcB3AKAKLVBmt9Ww/r18aOTHekn/AawsUdE3oaBYpxNS9zwIolK5aSVdELdM8PylDY7Y0dumbZeVEcHWACgFF7c9ym8WriMxlLlE9r4FSooOjfFZVSICJcF4JeKY4MXK5878oNivajYkSlsHPsIkcyJ6OiSu8lok0AagEUAIwYuhiZHzoQWnZeuM5Brki4YqOya6kZb4lZRFk6/eq/Osdzg4KVokpyhX8A/Jl1afEUSVMAAAAASUVORK5CYII="
+        }
+    ],
+    "Health & Science": [
+        {
+            "name": "PubMed",
+            "description": "Medical studies and reports",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB1ElEQVQ4jaWSPWgTcRjGf/ehuWhobO2JxGJRY3taTTRV2yoqSpW6iIWO4iAoUsRBioNDKUWKLU7i4KA4OfhVREQnETRia03k7IdiS0LaQYKJQg3mLtfc30GySNUDn/V5nx/vy/vAf0pqad3db2xquiBJku93s2Tb2eEHdw1rTcsxol23sObTjN7oIp9KVmaU9kMdTxcLAyiqGtA0bfms+XKQULSdQG2EmnUx0q9ughAA8p/CFW0IN3Sv0vUI5p2zIMpUrd5JeP/Jii//80ZJUlrb9lyV8qn3zI5dB8A4MoBWtcITAKBmZe3eRmPzccYf9uIUsyzx6zQd7fMMAIjFdgxpkuPy4clFANbu6qa6fouybXtznxeAoqoBn0/zz5kvBqVQ5DBasJ5gXaPnDQAWFpwCkiwLZekyAMp2wTPAsqy5d8nEZcIHThPQo7jlIua9854BibdvekqKX8PouARAOn6F+c8pT4Bc7svz6U8f77O1cwDVV439PcPU4yHw8AUhhDPyOn4OfWOMuuZfBZp41INTLACorhC2/Jc2zsxMX8vl8lMcPBUHFL5mnpEZGa748sS42esKYS8WLtl2NjE22s/6fScIhtr48W2S5O0zIFwvp3vST6Z+myCvkaonAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "ArXiv",
+            "description": "Open access to research papers",
+            "url": "https://arxiv.org/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACA0lEQVQ4jY3TXWjNcRgH8M//f3YwaTt5GYltWVMKeYkLiUJSnChLmqQkXKC8RSlckQsl5QYXSmspSg4JV3Nhd4qi5n0u197nHJuds7+L/Y92MPne/N6el+/z/T1PkKmthyl4gA84joH0l/f+B2XxmsVjnMM3nMvU1v8KkrnbBAFWYgBvId2wSxgbRbiG2ziMS0hlauuLziF24h42jGUQQhwkFzN4ioO4rFCYakF9GQ7ECV7ESaQbdpWUUEQHTmA29kokJmpp/WzmjKOi6CVOomesQ6K4ae7t1piaRj7fiTZRtB6rZXNrVM/5KFWxj6AN0tsb/xBRsZTMretUTX/j/uN3nrfO9eoNn9q79A90SSRoby+hnBh7yNxt4sET5tedNa9mt2iET18ZHKwWBNNF0SOVlYXm3u5SEUvQkA5E0RRhyNpVrFhSfKn8m33pRc1cgiAShhf1D7RIJtm0jqULX8t9PyMMBv0YLnEJSkqormNkhOH8ArOq7ti8YZFli4miNsnkDoXCa6kK6fVbxmEQhpSVVSmfdFlv3yIPn2UM/WgWBPPl81dE0Rw9fcXmwphfiGeiHOexURA06ew6ZmpqSDbXi/24gEPoH0/ErdiDmzhiwoQO2VwfTuEqGow2U7LI4pcGMYPlRgemCf2/DdNknDHa5qdx4w8R/4U4SHlcxkJsQ/YnnK+wsTK7TvYAAAAASUVORK5CYII="
+        },
+        {
+            "name": "WHO",
+            "description": "World Health Organization",
+            "url": "https://www.who.int/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAANlBMVEVHcEwek9ESkM8bktAPj88ek9EdktAVkdANj88cktAUkM8QkM8RkM8Pj88Lj88klNEKj88Bjs6EKaFPAAAAEXRSTlMAFHI1giFBZ6QpSZFYs74L2Oy7SmYAAACTSURBVBiVdY/JDgMxCEPDvoQkM///s2VUqeqh9QEZH+B5jD+q/FpigKAJtHl0MOPUciYxewKbpLWK9iLlTmimhB7cblPKZZArQCy33VdyyTCuVLzc76lpaCOXqpuWbwLQTaPM7L5i7ktDEBtnugRL2W1BPvstb1SIDD7Z9gGZzCAUcNq80Xm5I7ov/pQ51APkZ+0XvsUFNYuxI40AAAAASUVORK5CYII="
+        },
+        {
+            "name": "CDC",
+            "description": "Centers for Disease Control and Prevention",
+            "url": "https://www.cdc.gov/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEVHcEwZYK8LWqwkZbECU6lHfb0zb7c5crgrabMUWqwsabSlvt3///8+dbmFpdDI1+tWhcEASqawxODf6fXr8vlKfr6Ur9V3m8tajcZpuf84AAAACnRSTlMA////3ub/4uHeU18olAAAAIRJREFUGJWdj2sOwzAMgo2d2YnzbtN29z/psiNs6PuFBAKi35UsxmAxxGQphmAE3Pmu+Xgg3HJmmv3AaIuPNXvHYNKi4m1NLe8ywEKjqEs7mbdR2ZWkNGAbT+F1C5j86rvxzP2CnDkrqevOQDZ1QkF6aXWtKuqozqD4epntcV9SMvvj2wc8rAXoB2FGtwAAAABJRU5ErkJggg=="
+        }
+    ],
+    "News & Media": [
+        {
+            "name": "Associated Press",
+            "description": "Reliable news source",
+            "url": "https://apnews.com/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEX///8AAADuNzQgICBAQEBwcHDv7+/Pz88wMDDf39+8vcAQEBC/v7+Pj4+vr69YZ/rEAAAAVUlEQVQYlZ2NQQ6AMAgEO1JKa9X/P1daYmL01jlsYJKFlJYQxBMnl7GbTxaCPIQi6BCpCNE4qC9hfkFoLvaoKKpwTjGPVq6MdyB+Nrpnpz1ige3DT9ypSAFjw3zihgAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "Reuters",
+            "description": "International news organization",
+            "url": "https://www.reuters.com/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVQ4ja2SsXXEIBBEv/T8iCmBElQCJVwJBBRwJagEFUCgEihBJVACJVxM5OBmbaxLrQQkdmb/jli4PSMTAA88gRMIQAQOAFdoc/16E+8SeFdI+nxJ7AGvmr8GIxNGZlOHS99MtMm0Ai+ZBJH+EERgB86ROWTSJvzkCl4kVWsCWNQ5ucJzZB4SRnULGiFqfyqbS3RtFeImsQeiK5yTKIqyAg+tTfuwSNiFtOugK8hqGcnIq7uZhVVYh1y9uho6CrZru2k9LDMbIWm2oPc2FWN/CGi6By/Vx2VkkhyjjIykWz6i6fwGjBF8aZ4Zj4mkShiUSRfNriZ1deV9OdS96tCS9jKsQBv5/buVm3eFvkxdGZnLFeLIVGGbuQcuV7isxjR3AzsI08zIwM66XfcPA5kYdprGiBoNjfx/zzeKMXwSP6QdTQAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "BBC News",
+            "description": "British Broadcasting Corporation News",
+            "url": "https://www.bbc.com/news",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEXJAQGWAADLAQHGAACcAACZAACdAACbAACYAADDAADFGhr57++8AQG4AQGzAQHKdnbSk5OjAADDBgbDDQ3iqqr46Ojy19f//v724eHov7/xzMzfp6fclpbcjY379fXek5Pqubm9RETGZma/TU3DXFy3OTmxDw++U1PMf3+2LzCxGBi2Kirdr6/DbGzkvLy0RUW3WFjJhoapIyP2LG4UAAAAqUlEQVQYlWXI2w6CMAyA4apTGe6IAzbnCRBEHDB9/4dzGuMFfmnT5of5BPxZTADGSRxvcRwn+H0xEKLSLFdab0y6S0kChNr94agOp1Sdc00JUKqMOTpz3gw7oxkFxgrOy5rzSxWWMWB1w+prW7Bb0915CLLNpHVVyZ0QlncyhN4JJ+QgnJXDGAIfvbVCPp69985LWAUIrX4AofUb+lrDMlp+RFF4wsBs4gXBrQ9g7AMjCAAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "The Guardian",
+            "description": "British daily newspaper",
+            "url": "https://www.theguardian.com/international",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEUEKGIEKGEAJlwDJ1wBJlwEKGEEJ2FHcEwEKGEEKGEAJWAADVf///8AAFPEzNgAHFwtSHjg5u0aPXGQnbV5h6O0vc3x8/ittsdNYIdqe/MlAAAACnRSTlP+nxsbG6fIAN+PT0n8sgAAAJhJREFUGJU1zwkOhCAMBdDvinRhEUe9/0mnFSUhgZf8Lgh2prgBWxz9DbsLsu4lMw0dVtImB1ottDoMhFMuJU2y0xIwQqsICKRSyL4xHyJVAdBtELFxEkkMF7JeeBIGxMzZ+QUqV0rN5YvwT6yLRb6iDk/RGXqKZHphRlh8sKY9MryjX3Jwqnde+3IDWEthtsE7hLmvP/n7DwrQCa3C0HJqAAAAAElFTkSuQmCC"
+        }
+    ],
+    "Education, Learning & Literature": [
+        {
+            "name": "Khan Academy",
+            "description": "Free online courses",
+            "url": "https://www.khanacademy.org/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAARVBMVEVHcEwAso8AsY8Ar4sAsZIAspAAso8AsZAAt5cAspAArIb///8AsI1CvqOk3tC96eDw/PrZ9O6D0r9rzLZSxKsAtZQeu5xaHQB4AAAACnRSTlMA2v//NUjZig+/EXjAGAAAAIxJREFUGJV1T0sWhDAIU1GrUGo/6v2POkmdebMyCwppgDAMHfO6zsMf2z4B+/arAyoRhNDLhb9aq/JdQPCVZJaomUhEiXqYHYqERPR6qefselWPIKRBrgDamlBxG/XsspuKSQvS80Qo+gx1SijwPhRLPVspll36WhgTbSk1lcdYty5C7+HtOJ4/jt/zPy3aBhs7KxnvAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "Project Gutenberg",
+            "description": "Free eBooks",
+            "url": "https://www.gutenberg.org/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAY1BMVEXe7PKgHxOmNSva4ebDlJKkLCHW09fLr7C0Y13KrKzc5+3b5OrVz9PZ3uPUzM+lLyW2aGLBjYqoOTDNtre/iIXFmZiiJhq9f3yyW1StSkLIpKSrRj26dnLSx8mvUUq3bGfQvsBuL+pJAAAAj0lEQVQYlV3OWQ7CMAwEUE+6pNka6GLSlkDvf0ocCaWC+Xy2PCb6z4j2BnR9hTuAVmMKVeY4EC1YKzRK4OTHL5hONpz18AXS5gb4HSVHAeCJxYCzPrZQ4CU9PRJ9qxt+O0uG9QCVYqYsY+GVZ0CVEyPYChhec2tVquUhTpZsdwHt2MaA6C8x5Q05esXlU4o/AI8GUzQ2OL4AAAAASUVORK5CYII="
+        },
+        {
+            "name": "MIT OpenCourseWare",
+            "description": "Free course materials from MIT",
+            "url": "https://ocw.mit.edu/index.htm",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEW0HySGhHn////Zj5HHV1vh4N339/fw8O6dm5KVk4ro6Oa0sqvR0c2sq6Psx8iOjIHZ2NXKycT68fHCwby7urS5LTLjq63VgYSko5viuJpmAAAAcklEQVQYlYWNyQ7DIAwFYcCsDYEkXf7/Swsoh6g5dGy9w+jJVuovBhQYO3bQxWa2KZ72xdt2UUqZYrTtiDlXYbFXcUP/cBer4EMU5EMgZacebkm+Rw00RxMlond6RC1Ux342fCY3jspy3kjImgkH8fblC6CSBAcG+HXhAAAAAElFTkSuQmCC"
+        },
+        {
+            "name": "OpenStax",
+            "description": "Free textbooks",
+            "url": "https://openstax.org/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABe0lEQVQ4jdWRwUtUYRTFf+d783Lee84EFQiGaIvQcisGbcQIghZJi2D8GwTxX2lR/0AgbiXECBFECGqdi4iIFIRcWEwzrzfje99tkTONtuitAu/m3u/e+53DORcufKhXLL94MBlI23KWAU0zpRIp8A2z1EQqaGL6IZFitD18qPQAQgUj5vxoD1MapNEfJoGdZhlf9WXp0ShhUe3KuTfX86mT0C53saioKDKpljtik0VeJB5qhSxqhXLZJRLDPlZckL/CW1LFc2+/p2qQnnNvgdgYe7q53J80Go1FHI9LeHa4trq2Mtj47YHjLvDkX78NOwT+BjDZS5naAEOhD5LIwkCm4dgPOUQ99lWAK7X857OVufsBvl44Wtdmdl+fEXv8bu4tYraEFMw4ujq7M9I/4/jkwsT6brqVxPa+KGhjWNZVCyDr0DLJZx3S3Lv8zq3Op+mb+QEM2Hvj9sK2xHwpdlj6vLf+vO8BgG9/f2j14agMwP5U3GSvzOb/iF8SY4iMSxp7mAAAAABJRU5ErkJggg=="
+        },
+        {
+            "name": "Internet Archive",
+            "description": "Digital library",
+            "url": "https://archive.org/",
+            "favicon": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAUVBMVEUAAAABAQHFxcXKysoCAgLGxsaPj4/t7e2ZmZmRkZF/f3+1tbWrq6tzc3PV1dWEhIR5eXlJSUm9vb3W1tYsLCwUFBTl5eXf398mJiZhYWFnZ2fK/tYjAAAAgklEQVQYlVWOCQ7DIAwEFzAkYEKh6f3/h9YGojYjtIIRXhnGEBE6ZAQYfbVQ8qZOBLCtxTnvXLlWMSJ2d1BuIgipXuo46a5NiA94j7jA29EhV2un6AwRev6JeBZ+5ihdZqn8IC1NO5iRnpqyhwFnzpk1+aWbthgO4lsa0NYfnz5ygr6IawTxnOswKgAAAABJRU5ErkJggg=="
+        }
+    ]
+}

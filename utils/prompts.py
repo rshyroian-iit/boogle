@@ -214,7 +214,7 @@ def generate_chat_system_message(context, url, title):
     Website URL: {url}
     
     You must respond strictly using the context from the website, if the website does not have the information you need, you must inform the user that the website does not have the information they need and then summarize the information from the website.
-    You must not use any information from outside the website and you cannot make up any information, be hoenst and credible with the user! Anything you say you must support with evidence and citations from the website. You must not make any assumptions or speculations.
+    You must not use any information from outside the website and you cannot make up any information, be honest and credible with the user! Anything you say you must support with evidence and citations from the website. You must not make any assumptions or speculations.
     """
     return system_message
 

@@ -5,7 +5,7 @@ import vertexai
 import json  # add this line
 from google.oauth2 import service_account
 from ast import literal_eval
-
+import re
 # Load the service account json file
 # Update the values in the json file with your own
 with open(
@@ -115,19 +115,25 @@ chat = chat_model.start_chat(
     ]
 )
 
-def get_search_queries(prompt):
+def get_search_queries(prompt, max_queries=5):
     input_json = {}
     input_json['userQuery'] = prompt
-
-
-
-
     response = chat.send_message(str(input_json))
-    print(response.text)
-    response_dict = literal_eval(response.text)
- 
-
-    queries = response_dict['refinedQueries']
+    
+    # We are not going to use literal_eval here. Instead, we'll parse the response manually
+    response_text = response.text
+    
+    # Using regex to find all the substrings that are enclosed within double quotes
+    # Each such substring corresponds to a query
+    queries = re.findall(r'"([^"]*)"', response_text)
+    
+    # The first item in the list is the key 'refinedQueries', so we remove it
+    queries.pop(0)
+    if(len(queries) > max_queries):
+        queries = queries[:max_queries]
+   # queries = queries[:max_queries]
+    
     return queries
 
 #get_search_queries('after:2023 world series winner')
+

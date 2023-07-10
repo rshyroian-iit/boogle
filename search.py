@@ -55,14 +55,19 @@ def get_token_count(text):
     return len(enc.encode(text))
 
 def search_url(url, timestamp):
+    display_queries = [url]
     result = {'url': url, 'content': '', 'favicon': url, 'title': url, 'snippet': url, 'source': 'Google', 'time': 0.0, 'data': ''}
     result = extract_content_from_search_result(result)
     result['tokens'] = get_token_count(result['content'])
     result['chat'] = []
+    result['processed'] = False
     results = [result]
     results = [result for result in results if not result['content'].startswith('Error:')]
     results = [result for result in results if result['tokens'] > 100]
-    research = json.dumps(results)
+    json_object = {}
+    json_object['queries'] = display_queries
+    json_object['results'] = results
+    research = json.dumps(json_object, indent=4)
     with open(f'research/research{timestamp}.json', 'w') as f:
         f.write(research)
     f.close()
@@ -80,7 +85,9 @@ def search(query, timestamp, number_of_retries=0):
     if not any(search_options.values()):
         search_options = {'google': True, 'wikipedia': True, 'arxiv': True,
                           'stackoverflow': True, 'reddit': True, 'miscellaneous': True}
-    additonal_search_queries = get_search_queries(query)
+    additonal_search_queries = []
+    #additonal_search_queries = get_search_queries(query)
+    display_queries = []
     search_queries = []
     #search_queries.insert(0,query)
     '''
@@ -104,6 +111,7 @@ def search(query, timestamp, number_of_retries=0):
     '''
     search_queries.append(query)
     search_queries += additonal_search_queries
+    search_queries = list(set(search_queries))
     #Add Google{ before every element in search queries and } after
     for i in range(len(search_queries)):
         search_queries[i] = 'Google{' + search_queries[i] + '}'
@@ -121,6 +129,9 @@ def search(query, timestamp, number_of_retries=0):
             query = search_query.strip()[6:].strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                if query in display_queries:
+                    continue
+                display_queries.append(query)
             google_search_queries.append(query + "+00")
             google_search_queries.append(query + "+10")
             google_search_queries.append(query + "+20")
@@ -132,33 +143,37 @@ def search(query, timestamp, number_of_retries=0):
             query = search_query.strip()[5:].strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                display_queries.append(query)
             arxiv_search_queries.append(query)
             all_search_queries.append({'source': 'Arxiv', 'query': query})
         elif search_query.strip().startswith("Wikipedia"):
             query = search_query.strip()[9:].strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                display_queries.append(query)
             wikipedia_search_queries.append(query)
             all_search_queries.append({'source': 'Wikipedia', 'query': query})
         elif search_query.strip().startswith("StackOverflow"):
             query = search_query.strip()[13:].strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                display_queries.append(query)
             stackoverflow_search_queries.append(query)
             all_search_queries.append({'source': 'StackOverflow', 'query': query})
         elif search_query.strip().startswith("Reddit"):
             query = search_query.strip()[6:].strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                display_queries.append(query)
             reddit_search_queries.append(query)
             all_search_queries.append({'source': 'Reddit', 'query': query})
         else:
             query = search_query.strip()
             if query.startswith("{") and query.endswith("}"):
                 query = re.sub(r'^\{+|\}+$', '', query)
+                display_queries.append(query)
             miscellaneous_search_queries.append(query)
             all_search_queries.append({'source': 'Miscellaneous', 'query': query})
-    content_results = []
     print("google queries", len(google_search_queries))
     print("arxiv queries", len(arxiv_search_queries))
     print("wikipedia queries", len(wikipedia_search_queries))
@@ -194,8 +209,12 @@ def search(query, timestamp, number_of_retries=0):
     for i in range(len(results)):
         results[i]['tokens'] = get_token_count(results[i]['content'])
         results[i]['chat'] = []
+        results[i]['processed'] = False
     results = [result for result in results if result['tokens'] > 100]
-    research = json.dumps(results)
+    json_object = {}
+    json_object['queries'] = display_queries
+    json_object['results'] = results
+    research = json.dumps(json_object, indent=4)
     with open(f'research/research{timestamp}.json', 'w') as f:
         f.write(research)
     f.close()

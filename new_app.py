@@ -539,17 +539,7 @@ if st.session_state['selected_website'] is not None:
             st.write(pdf_content_bytes)
             st.write(type(pdf_content_bytes))
         else:
-            '''markdown_data = st.session_state['object']['results'][st.session_state['selected_website']]['content']
-                custom_css = """
-                <style>
-                    img {
-                        max-width: 100%;
-                        height: 700;
-                    }
-                </style>
-                """
-                st.markdown(custom_css, unsafe_allow_html=True)
-                st.markdown(markdown_data)'''
+
             if st.checkbox('Reader Mode', True):
                 markdown_data = st.session_state['object']['results'][st.session_state['selected_website']]['content']
                 html_data = markdown(markdown_data)
@@ -561,18 +551,21 @@ if st.session_state['selected_website'] is not None:
                         max-width: 100%;
                         height: auto;
                     }
-                    .scrollable {
-                        height: 700px;
-                        overflow-y: auto;
+                    body {
+                        font-family: "Helvetica Neue", Arial, sans-serif;
+                        font-size: 14px;
+                        line-height: 1.42857143;
+                        color: #333;
                     }
+              
                 </style>
                 """
 
-                # Wrapping the content in a div with a scrollable class
-                html_data = custom_css + f'<div class="scrollable">{html_data}</div>'
+                # Include CSS styling in the HTML content
+                html_data = custom_css + html_data
 
-                # Render the HTML
-                st.components.html(html_data, scrolling=True)
+                # Specify height and enable scrolling
+                components.html(html_data, height=None, scrolling=True)
  
             else:
                 # toggle 1:

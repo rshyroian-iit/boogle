@@ -4,13 +4,16 @@ from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 import vertexai
 import json  # add this line
 from google.oauth2 import service_account
+import numpy as np
+import os
 
 # Load the service account json file
 # Update the values in the json file with your own
-with open(
-    "service_account.json"
-) as f:  # replace 'serviceAccount.json' with the path to your file if necessary
-    service_account_info = json.load(f)
+#with open(
+#    "service_account.json"
+#) as f:  # replace 'serviceAccount.json' with the path to your file if necessary
+#    service_account_info = json.load(f)
+service_account_info = os.getenv("SERVICE_ACCOUNT_INFO")
 
 my_credentials = service_account.Credentials.from_service_account_info(
     service_account_info

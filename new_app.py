@@ -5,7 +5,7 @@ from io import BytesIO
 from PIL import Image
 import streamlit as st
 import base64
-from utils.ai import cosine_similarity, turbo_boogle, get_token_count#, embedding_function
+from utils.ai import cosine_similarity, turbo_boogle, get_token_count, embedding_function
 from utils.prompts import generate_chat_system_message, generate_keyword_prompt
 import time
 import concurrent.futures
@@ -13,8 +13,8 @@ from markdown import markdown
 from datetime import datetime, timedelta
 import tiktoken
 import re
-
-from google_embeddings import embedding_function
+import os
+#from google_embeddings import embedding_function
 from generate_quick_response import get_quick_response
 from vertex_test import handle_chat
 from website_pairings import website_pairs
@@ -68,8 +68,11 @@ if 'quick_response' not in st.session_state:
 if 'time_options' not in st.session_state:
     st.session_state["time_options"] = ["Any Time", "Past Hour", "Past Day",
                         "Past Week", "Past Month", "Past Year"]
+if 'reader_view' not in st.session_state:
+    st.session_state['reader_view'] = True
  
-def update_quick_response(query,snippets):
+def update_quick_response(query, snippets):
+    print(snippets)
     st.session_state['quick_response'] = get_quick_response(query, snippets)
 
     
@@ -211,6 +214,30 @@ def edit_urls(md_content, url):
     
 def replace_newlines(text):
     return re.sub("\n{3,}", "\n\n", text)
+def get_summary(chunks):
+    text = ''
+    token_count = 0
+    for chunk in chunks:
+        if token_count + get_token_count(chunk['text']) > 5000:
+            continue
+        text += chunk['text'] + '\n'
+        token_count += get_token_count(chunk['text'])
+    system_message = "Your only job is to summarize any input provided to you."
+    return handle_chat(messages=[{'role': 'system', 'content': system_message}, {'role': 'user', 'content': text + '\n Summarize the above text:'}], model=model, max_tokens=200)
+
+def get_summaries(results):
+    if len(results) == 0:
+        return
+    if 'summary' in results[0]:
+        return
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(get_summary, result['chunks']) for result in results]
+        for future in futures:
+            i = futures.index(future)
+            results[i]['summary'] = future.result()
+        executor.shutdown(wait=True)
+    st.session_state['object']['results'] = results
 
 def generate_keywords(website):
     token_count = 0
@@ -266,7 +293,7 @@ def respond(results, index):
     messages.insert(insert_index, {'role': 'system', 'content': system_message})
     print("messages")
     print(messages)
-    response = handle_chat(messages=messages, model=model, max_tokens=1000)
+    response = turbo_boogle(messages=messages, model=model, max_tokens=1000)
     #response = turbo_boogle(messages=messages, model=model, max_tokens=1000)
     print("response")
     print(response)
@@ -343,9 +370,9 @@ def process_website(json_object, index):
     print('Content length after replacing newlines:', len(json_object[index]['content']))
     json_object[index] = split_content(json_object[index])
     json_object[index] = get_embeddings(json_object[index])
-    with open(f'speed_test/{json_object[index]["title"]}_new.md', 'w') as f:
-        f.write(json_object[index]['content'])
-    f.close()
+    #with open(f'speed_test/{json_object[index]["title"]}_new.md', 'w') as f:
+    #    f.write(json_object[index]['content'])
+    #f.close()
     json_object[index]['processed'] = True
     return json_object
 
@@ -401,7 +428,7 @@ if st.session_state['selected_website'] is None:
 
                 #st.session_state['user_input_box'] = st.empty()
 
-    if  user_input and submit_button:
+    if user_input and submit_button:
             st.session_state['query'] = user_input
             st.session_state['quick_response'] = ''
             st.session_state['object'] = None
@@ -431,6 +458,7 @@ if st.session_state['selected_website'] is None:
               #  user_input = f'site:{st.session_state["search_websites"]} ' + user_input
             print(user_input)
             st.session_state['object'] = json.load(open(search(user_input, timestamp), "r"))
+            os.remove(search(user_input, timestamp))
             if len(st.session_state['object']['results']) == 1:
                 start_time = time.time()
                 st.session_state['object']['results'] = process_website(st.session_state['object']['results'], 0)
@@ -455,12 +483,29 @@ if st.session_state['object'] and st.session_state['selected_website'] is None:
     for website in st.session_state['object']['results']:
         if website['snippet']:
             snippets_str += website['snippet'] + '\n'
-    #with st.expander('Quick Response', expanded=False):
-        #st.write(snippets_str)
-        if not st.session_state['quick_response'] and snippets_str:
-            update_quick_response(user_input, snippets_str)
-            col_content2.markdown("#### Quick Response")
-            col_content2.markdown(st.session_state['quick_response'])
+    
+    if st.session_state['quick_response']:
+        col_content2.markdown("#### Quick Response")
+        col_content2.markdown(st.session_state['quick_response'])
+    else:
+        if not snippets_str:
+            snippets_str = 'No snippets found.'
+        update_quick_response(user_input, snippets_str)
+        col_content2.markdown("#### Quick Response")
+        col_content2.markdown(st.session_state['quick_response'])
+    
+    # botton which says Summarize
+    if 'summary' not in st.session_state['object']['results'][0]:
+        button = col_content2.button("Summarize", key='summarize_button')
+        if button:
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                futures = [executor.submit(process_website, st.session_state['object']['results'], i) for i in range(len(st.session_state['object']['results']))]
+                for future in futures:
+                    i = futures.index(future)
+                    st.session_state['object']['results'][i] = future.result()[i]
+                executor.shutdown(wait=True)
+            get_summaries(st.session_state['object']['results'])
+            st.experimental_rerun()
 
     for i, website in enumerate(st.session_state['object']['results']):
         base64_string = website['favicon'].strip()
@@ -490,6 +535,8 @@ if st.session_state['object'] and st.session_state['selected_website'] is None:
             with colb:
                 st.markdown(f"**[{website['title'].strip()}]({website['url'].strip()})**", unsafe_allow_html=True)
                 st.write(website['snippet'].strip()) # changed from st.text to st.write
+                if 'summary' in website and website['summary'].strip():
+                    st.markdown(f"**Summary:** {website['summary']}")
 
             # Button
             with colb:
@@ -507,14 +554,44 @@ if st.session_state['selected_website'] is not None:
 
     col1, col2 = st.columns([1, 1])
     container = col1.container()
-
+    markdown_chat_data = "#### Chat"
     with container:
+        back_button = st.button("Back", key='back_button')
+        if back_button:
+            st.session_state['selected_website'] = None
+            st.experimental_rerun()
         for message in st.session_state['object']['results'][st.session_state['selected_website']]['chat']:
-            st.write("#### " + message['role'] + "\n" + message['content'])
+            markdown_chat_data += '\n####' + message['role'] + '\n' + message['content']
+        html_chat_data = markdown(markdown_chat_data)
+        # Custom CSS for the HTML content
+        custom_css = """
+        <style>
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            body {
+                font-family: "Helvetica Neue", Arial, sans-serif;
+                font-size: 14px;
+                line-height: 1.42857143;
+                color: #333;
+            }
+        </style>
+        """
+        html_chat_data += '<script type="text/javascript">window.scrollTo(0,document.body.scrollHeight);</script>'
+        # Include CSS styling in the HTML content
+        html_chat_data = custom_css + html_chat_data
+
+        # Specify height and enable scrolling
+        components.html(html_chat_data, height=600, scrolling=True)
+
+            #st.write("#### " + message['role'] + "\n" + message['content'])
         with st.form(key='message_form', clear_on_submit=True):
             
-            user_message = st.text_area("Type your message here", key='user_message', height=100)
-            submit_button = st.form_submit_button(label='Send')
+            user_message = st.text_area("Ask about the website", key='user_message', height=100)
+            col3, col4, col5 = st.columns([1, 1, 1])
+            submit_button = col3.form_submit_button(label='Send')
+            #back_button = col5.form_submit_button(label='Back')
 
 
         if submit_button and user_message:
@@ -532,53 +609,49 @@ if st.session_state['selected_website'] is not None:
                 print(e)
                 st.session_state['object']['results'][st.session_state['selected_website']]['chat'].append({'role': 'assistant', 'content': 'I am sorry, there was an error. Please try again.', 'summary': 'I am sorry, I do not understand. Please try again.'})
             st.experimental_rerun()
+        #if back_button:
+        #    st.session_state['selected_website'] = None
+        #    st.experimental_rerun()
+
     
     with col2:
-        if st.session_state['object']['results'][st.session_state['selected_website']]['url'].endswith('.pdf'):
-            pdf_content_bytes = st.session_state['object']['results'][st.session_state['selected_website']]['data'].encode('utf-8')
-            st.write(pdf_content_bytes)
-            st.write(type(pdf_content_bytes))
+        button_text = "Reader View" if not st.session_state['reader_view'] else "Website View"
+        reader_button = st.button(button_text, key='reader_button')
+        if reader_button:
+            st.session_state['reader_view'] = not st.session_state['reader_view']
+            st.experimental_rerun()
+        if st.session_state['reader_view']:
+            markdown_data = st.session_state['object']['results'][st.session_state['selected_website']]['content']
+            html_data = markdown(markdown_data)
+            # Custom CSS for the HTML content
+            custom_css = """
+            <style>
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+                body {
+                    font-family: "Helvetica Neue", Arial, sans-serif;
+                    font-size: 14px;
+                    line-height: 1.42857143;
+                    color: #333;
+                }
+          
+            </style>
+            """
+            # Include CSS styling in the HTML content
+            html_data = custom_css + html_data
+            # Specify height and enable scrolling
+            components.html(html_data, height=800, scrolling=True)
         else:
+            # toggle 1:
+            html_data = st.session_state['object']['results'][st.session_state['selected_website']]['data']
+            html_data = f"<div style='pointer-events: none;'>{html_data}</div>"
+            #st.header("Show an external HTML")
+            st.components.v1.html(html_data, height=800, scrolling=True)
+            #st.components.v1.iframe(st.session_state['object']['results'][st.session_state['selected_website']]['url'], scrolling=True, height=800)
 
-            if st.checkbox('Reader Mode', True):
-                markdown_data = st.session_state['object']['results'][st.session_state['selected_website']]['content']
-                html_data = markdown(markdown_data)
 
-                # Custom CSS for the HTML content
-                custom_css = """
-                <style>
-                    img {
-                        max-width: 100%;
-                        height: auto;
-                    }
-                    body {
-                        font-family: "Helvetica Neue", Arial, sans-serif;
-                        font-size: 14px;
-                        line-height: 1.42857143;
-                        color: #333;
-                    }
-              
-                </style>
-                """
-
-                # Include CSS styling in the HTML content
-                html_data = custom_css + html_data
-
-                # Specify height and enable scrolling
-                components.html(html_data, height=None, scrolling=True)
- 
-            else:
-                # toggle 1:
-                html_data = st.session_state['object']['results'][st.session_state['selected_website']]['data']
-                html_data = f"<div style='pointer-events: none;'>{html_data}</div>"
-                #st.header("Show an external HTML")
-                #st.components.v1.html(html_data, scrolling=True)
-                st.components.v1.iframe(st.session_state['object']['results'][st.session_state['selected_website']]['url'], scrolling=True, height=700)
-
-if st.session_state['selected_website'] is not None:
-    if col1.button('Back'):
-        st.session_state['selected_website'] = None
-        st.experimental_rerun()
 with st.sidebar:
     st.markdown("<h1 style='margin-bottom:0'> Tools </h1>",
                 unsafe_allow_html=True)  # remove margin bottom

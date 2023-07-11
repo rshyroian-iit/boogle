@@ -34,7 +34,7 @@ vertexai.init(project=project_id, location="us-central1")
 
 model = TextGenerationModel.from_pretrained("text-bison")
 def get_quick_response(query, background):
-    default_prompt = """You are a Google Search Assistant. Your task is to give a quick response to the user. To perform this, you will be provided with a set of background information. You must formulate your answer utilizing the information presented to you there.
+    default_prompt = """You are a Google Search Assistant. Your task is to give a detailed response to the user. To perform this, you will be provided with a set of background information. You must formulate your answer utilizing the information presented to you there.
 
 Search Query: {}
 

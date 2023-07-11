@@ -49,9 +49,9 @@ def fetch_content_google(result):
             # remove all lines before the first occurrence of the title
             #html2text_text = new_html2text_text
             #html2text_text = fix_markdown(html2text_text)
-            with open(f'speed_test/{title}.md', 'w') as f:
-                f.write(html2text_text)
-            f.close()
+            #with open(f'speed_test/{title}.md', 'w') as f:
+            #    f.write(html2text_text)
+            #f.close()
             print(f'Fetched content from {url} in {time.time() - time_start} seconds')
             return {'url': url, 'content': html2text_text, 'favicon': favicon_url, 'title': title, 'snippet': snippet, 'source': 'Google', 'time': time.time() - time_start, 'data': response.text}
         else:
@@ -66,7 +66,7 @@ def fetch_content_google(result):
 def get_google_search_results(query, num_results=0):
     from requests_html import HTMLSession
     import requests
-    url = f"https://www.google.com/search?q=" + query + "&start={num_results}"
+    url = f"https://www.google.com/search?q=" + query + f"&start={num_results}"
     try:
         session = HTMLSession()
         response = session.get(url)
